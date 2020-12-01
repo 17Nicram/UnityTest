@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Patrol _patrol;
     [SerializeField] NavMeshAgent _player;
@@ -34,26 +34,6 @@ public class PlayerControler : MonoBehaviour
                 }
                 else
                     _currentDestination = _patrolPoints[_currentDestinationIndex].transform.position;
-
-                /*
-                if (_currentDestinationIndex == (_patrolPoints.Count - 1))
-                {
-                    _currentDestinationIndex = 0;
-                    _currentDestination = _patrolPoints[0].transform.position;
-                }
-                else
-                {
-
-                        _currentDestinationIndex++;
-                        if ((_currentDestinationIndex + 1) >= _patrolPoints.Count)
-                        {
-                            _currentDestinationIndex = 0;
-                            _currentDestination = _patrolPoints[_currentDestinationIndex].transform.position;
-                        }
-                        else
-                            _currentDestination = _patrolPoints[_currentDestinationIndex].transform.position;
-                    
-                }*/
             }
 
             _player.SetDestination(_currentDestination);

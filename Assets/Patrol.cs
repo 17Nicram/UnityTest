@@ -7,6 +7,7 @@ public class Patrol : MonoBehaviour
 {
     [SerializeField] Camera _camera;
     [SerializeField] GameObject _patrolPointPrefab;
+    [SerializeField] PlayerMovement _player;
     public List<GameObject> _patrolPoints;
 
     void Update()
